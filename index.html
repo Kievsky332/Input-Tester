@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New site about about em.. input?</title>
+</head>
+<body>
+    <form >
+    <fieldset>
+    <style>
+        input , label{
+            font-size: 30px;
+        }
+    </style>
+    <center><h1>Привет сейчас будет легкий опрос</h1></center>
+    <input type="text" placeholder="Андрей" required>
+    <input type="email" placeholder="test@mail.com" required>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <input type="text" placeholder="Телефон" class="phone_mask">
+    <script>
+        $(".phone_mask").mask("+7(999)999-99-99");
+    </script><br>
+    <input type="username" placeholder="@name" required>
+    <input type="password" placeholder="Пароль" required><br>
+    <input type="url" placeholder="Вставь ссылку на рикрол" required>
+    <br>
+    <h1>Тебе больше 18?</h1>
+    <form>
+        <input type="radio" name="fav_language" value="yes" required>
+        <label for="yes">ДА</label><br>
+        <input type="radio" name="fav_language" value="no" required>
+        <label for="no">Нет</label><br>
+    </form>
+    <br>
+    <center><h1>А теперь проверим дату</h1></center>
+    <input type="date" required >
+    <input type="time" required ><br>
+    <br>
+    <center><h1>А теперь настройка страницы</h1></center>
+    <input type="file" multiple accept="image/*" required >
+    <input type="color" required>
+    <input type="range" id="myRange" min="0" max="100" required>
+    <br>
+    <input type="submit" placeholder="submit"  >
+    <input type="reset" placeholder="reset" >
+    <script>
+        const rangeInput = document.getElementById('myRange');
+        const rangeValueSpan = document.getElementById('rangeValue');
+
+         // Отображаем начальное значение
+        rangeValueSpan.textContent = rangeInput.value;
+        // Обновляем значение при изменении ползунка
+        rangeInput.addEventListener('input', function() {
+        rangeValueSpan.textContent = this.value;
+        });
+    </script>
+    </fieldset>
+    </form> 
+</body>
+</html>
