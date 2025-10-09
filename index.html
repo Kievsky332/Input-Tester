@@ -19,7 +19,7 @@
     <input type="text" placeholder="Андрей" required>
     <input type="email" placeholder="test@mail.com" required>
     <script src="js/jquery.maskedinput.min.js"></script>
-    <input type="text" placeholder="Телефон" class="phone_mask">
+    <input type="text" placeholder="Телефон" class="phone_mask" required>
     <script>
         $(".phone_mask").mask("+7(999)999-99-99");
     </script><br>
@@ -41,7 +41,14 @@
     <br>
     <center><h1>А теперь настройка страницы</h1></center>
     <input type="file" multiple accept="image/*" required >
-    <input type="color" required>
+     <input type="color" id="colorPicker" value="#ffffff" >
+
+  <script >const colorPicker = document.getElementById('colorPicker');
+const body = document.body;
+
+colorPicker.addEventListener('input', () => {
+  body.style.backgroundColor = colorPicker.value;
+});</script>
     <input type="range" id="myRange" min="0" max="100" required>
     <br>
     <input type="submit" placeholder="submit"  >
